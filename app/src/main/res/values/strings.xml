@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">GLibrary</string>
+    <string name="tv_characters">Characters</string>
+    <string name="tv_artifacts">Artifacts</string>
+    <string name="tv_weapons">Weapons</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

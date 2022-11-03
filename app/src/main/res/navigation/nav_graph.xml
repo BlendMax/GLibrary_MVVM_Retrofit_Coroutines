@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/startFragment">
+
+    <fragment
+        android:id="@+id/startFragment"
+        android:name="com.kozak.glibrary.view.fragments.StartFragment"
+        android:label="fragment_start"
+        tools:layout="@layout/fragment_start" >
+        <action
+            android:id="@+id/action_startFragment_to_characterFragment"
+            app:destination="@id/charactersFragment" />
+        <action
+            android:id="@+id/action_startFragment_to_artifactsFragment"
+            app:destination="@id/artifactsFragment" />
+        <action
+            android:id="@+id/action_startFragment_to_weaponsFragment"
+            app:destination="@id/weaponsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/charactersFragment"
+        android:name="com.kozak.glibrary.view.fragments.CharactersFragment"
+        android:label="fragment_character"
+        tools:layout="@layout/fragment_character" />
+    <fragment
+        android:id="@+id/artifactsFragment"
+        android:name="com.kozak.glibrary.view.fragments.ArtifactsFragment"
+        android:label="fragment_artifacts"
+        tools:layout="@layout/fragment_artifacts" />
+    <fragment
+        android:id="@+id/weaponsFragment"
+        android:name="com.kozak.glibrary.view.fragments.WeaponsFragment"
+        android:label="fragment_weapons"
+        tools:layout="@layout/fragment_weapons" />
+</navigation>
