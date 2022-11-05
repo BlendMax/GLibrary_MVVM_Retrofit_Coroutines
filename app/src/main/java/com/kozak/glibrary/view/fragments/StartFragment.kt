@@ -12,7 +12,6 @@ import com.kozak.glibrary.databinding.FragmentStartBinding
 
 class StartFragment : Fragment() {
     lateinit var binding: FragmentStartBinding
-    lateinit var array: ArrayList<String>
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -26,10 +25,6 @@ class StartFragment : Fragment() {
         binding.tvArtifacts.setOnClickListener{
             it.findNavController().navigate(R.id.action_startFragment_to_artifactsFragment)
         }
-        binding.tvWeapons.setOnClickListener{
-            it.findNavController().navigate(R.id.action_startFragment_to_weaponsFragment)
-        }
-
         return binding.root
     }
 
