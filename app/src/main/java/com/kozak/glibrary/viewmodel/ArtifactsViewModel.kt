@@ -15,6 +15,7 @@ class ArtifactsViewModel(private val artifactsRepository: ArtifactsRepository): 
         }
     }
 
+
     val artifacts: LiveData<ArtifactsModel>
     get() = artifactsRepository.artifacts
 }

@@ -7,7 +7,7 @@
     android:background="@color/primaryColor">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recViewArtifacrts"
+        android:id="@+id/recViewArtifacts"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 </LinearLayout>

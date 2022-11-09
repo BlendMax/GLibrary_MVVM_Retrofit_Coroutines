@@ -23,20 +23,20 @@ class CharactersFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         // Inflate the layout for this fragment
         binding = FragmentCharacterBinding.inflate(inflater)
         val apiInterface = ApiInstance.getRetrofitInstance().create(ApiInterface::class.java)
         val charactersRepository = CharactersRepository(apiInterface)
         charactersViewModel = ViewModelProvider(this, CharactersViewModelFactory(charactersRepository))[CharactersViewModel::class.java]
         charactersViewModel.characters.observe(viewLifecycleOwner) {
-            initRec(it)
+            initRecyclerView(it)
             }
 
         return binding.root
     }
 
-    fun initRec(array: ArrayList<String>) = with(binding){
+    private fun initRecyclerView(array: ArrayList<String>) = with(binding){
         recView.layoutManager = LinearLayoutManager(context)
         recView.adapter = adapter
         adapter.addCharcter(array)

@@ -24,21 +24,21 @@ class ArtifactsFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         // Inflate the layout for this fragment
         binding = FragmentArtifactsBinding.inflate(inflater)
         val artifactsRepository = ArtifactsRepository(ApiInstance.getRetrofitInstance().create(ApiInterface::class.java))
         artifactsViewModel = ViewModelProvider(this, ArtifactsViewModelFactory(artifactsRepository))[ArtifactsViewModel::class.java]
         artifactsViewModel.artifacts.observe(viewLifecycleOwner){
-            initRec(it)
+            initRecyclerView(it)
             Log.d("MyLog", it.toString())
         }
         return binding.root
     }
 
-    fun initRec(array: ArrayList<String>) = with(binding){
-        recViewArtifacrts.layoutManager = LinearLayoutManager(context)
-        recViewArtifacrts.adapter = adapter
+    private fun initRecyclerView(array: ArrayList<String>) = with(binding){
+        recViewArtifacts.layoutManager = LinearLayoutManager(context)
+        recViewArtifacts.adapter = adapter
         adapter.addCharcter(array)
     }
 
